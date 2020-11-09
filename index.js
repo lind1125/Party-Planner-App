@@ -11,6 +11,9 @@ const isLoggedIn = require('./middleware/isLoggedIn')
 app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 
+// access static pages
+app.use(express.static(__dirname + '/public/'))
+
 // body parser middleware (this makes req.body work)
 app.use(express.urlencoded({extended: false}))
 
