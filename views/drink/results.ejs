@@ -1,0 +1,9 @@
+<ul>
+    <% results.forEach(drink=>{ %>
+        <li>
+            <a href="/drink/<%= drink.idDrink %>">
+                <%= drink.strDrink %>
+            </a> 
+        </li>
+    <% }) %> 
+</ul>
