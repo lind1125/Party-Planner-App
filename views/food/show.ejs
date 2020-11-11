@@ -1,17 +1,18 @@
-<h3>Search for recipes</h3>
-
-<form method="GET" action="/food">
-    <label for="foodKeyword">Search for Recipes:</label>
-    <input type="text" name="keyword" id="foodKeyword">
-    <input type="submit" value="Search">
-</form>
-
+<h2><%= recipeInfo.title %></h2>
+<img src="<%= recipeInfo.image %>" height="250px" width="350px">
+<br>
 <ul>
-    <% results.forEach(recipe=>{ %>
+    <% recipeInfo.extendedIngredients.forEach(ingredient=>{ %>
         <li>
-           <a href="/food/<%= recipe.id %>">
-                <%= recipe.title %> 
-           </a>
+            <%= ingredient.amount %> <%= ingredient.unit %> <%= ingredient.name %> 
         </li>
     <% }) %> 
 </ul>
+<h4>Instructions:</h4>
+<ol>
+        <% recipeInfo.analyzedInstructions[0].steps.forEach(step=>{ %>
+            <li>
+                <%= step.step %>
+            </li>
+        <% }) %> 
+</ol>
