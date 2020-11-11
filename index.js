@@ -43,6 +43,7 @@ app.use((req, res, next)=>{
 // use controllers
 app.use('/auth', require('./controllers/auth.js'))
 app.use('/food', require('./controllers/food.js'))
+app.use('/drink', require('./controllers/drink.js'))
 
 app.get('/', (req, res)=>{
     res.render('home.ejs')
