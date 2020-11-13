@@ -1,0 +1,9 @@
+<ul>
+    <% results.forEach(recipe=>{ %>
+        <li>
+           <a href="/food/<%= recipe.id %>">
+                <%= recipe.title %> 
+           </a>
+        </li>
+    <% }) %> 
+</ul>

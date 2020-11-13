@@ -1,17 +1,9 @@
 <h3>Search for recipes</h3>
 
-<form method="GET" action="/food">
+<form method="GET" action="/food/results">
     <label for="foodKeyword">Search for Recipes:</label>
     <input type="text" name="keyword" id="foodKeyword">
     <input type="submit" value="Search">
 </form>
 
-<ul>
-    <% results.forEach(recipe=>{ %>
-        <li>
-           <a href="/food/<%= recipe.id %>">
-                <%= recipe.title %> 
-           </a>
-        </li>
-    <% }) %> 
-</ul>
+

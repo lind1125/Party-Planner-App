@@ -1,0 +1,33 @@
+<h1><%= results.strDrink %></h1>
+<img src="<%= results.strDrinkThumb %>" height=250px width=250px>
+<div id="cocktail-recipe">
+<ul>
+<% for (key in results) { %>
+    <% let measureUnit %> 
+    <% if (key.includes('strMeasure') && results[key] !== null) { %>
+        <% measureUnit = results[key] %>
+        <% } else { %>
+            <% continue %>
+        <% } %>    
+    <li>
+        <%= measureUnit %> 
+    </li>
+    <% } %> 
+</ul>
+<ul id="cocktail-ingredients">
+<% for (key in results) { %> 
+    <% let ingredient %> 
+    <% if (key.includes('strIngredient') && results[key] !== null) { %>
+        <%  ingredient = results[key] %>
+    <% } else { %>
+        <% continue %>
+    <% } %>    
+    <li>
+        <%= ingredient %> 
+    </li>
+    <% } %> 
+</ul>
+</div>
+<p>
+    <%= results.strInstructions %> 
+</p>

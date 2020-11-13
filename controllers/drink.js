@@ -18,4 +18,18 @@ router.get('/results', (req, res)=>{
     // res.send('THIS IS THE DRINK PAGE')
 })
 
+router.get('/:drink_id', (req, res)=>{
+    axios.get(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${req.params.drink_id}`)
+    .then(response=>{
+        // res.send(response.data)
+        let results = response.data.drinks[0]
+        // console.log(results.strDrink)
+        res.render('drink/show', {results: results})
+    })
+    .catch(err=>{
+        console.log('ERROR HAPPENING:', err)
+    })
+})
+
+
 module.exports = router
