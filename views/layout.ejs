@@ -10,19 +10,25 @@
     <header>
         <nav>
             <ul>
+                <% if (!currentUser) {%>                
+                    <li><a href="/auth/login">Guests</a></li>
+                    <li><a href="/auth/login">Food</a></li>
+                    <li><a href="/auth/login">Drink</a></li>
+                <% }else { %> 
                 <li><a href="">Guests</a></li>
                 <li><a href="/food">Food</a></li>
                 <li><a href="/drink">Drink</a></li>
+                <% } %> 
             </ul>
             <h1>Party Planner</h1>
             <ul>
                 <% if (!currentUser) {%>
                     <li><a href="/auth/signup">Sign Up</a></li>
                     <li><a href="/auth/login">Log In</a></li>
-                    <% }else { %> 
-                        <li><a href="/auth/logout">Log Out</a></li>
-                        <li><a href="/profile">Profile</a></li>
-                        <% } %>  
+                <% }else { %> 
+                    <li><a href="/auth/logout">Log Out</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                <% } %>  
             </ul>
         </nav>
         <hr>
