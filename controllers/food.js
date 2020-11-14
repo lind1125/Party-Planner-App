@@ -1,9 +1,21 @@
 const express = require('express')
+let db = require('../models')
 const router = express.Router()
 const axios = require('axios')
+const isLoggedIn = require('../middleware/isLoggedIn')
 
-router.get('/', (req, res)=>{
-    res.render('food/main')
+router.get('/', isLoggedIn, (req, res)=>{
+    console.log(req.user.id)
+    db.faveRecipe.findAll({
+        where: {userId: req.user.id}
+    })
+    .then(foundRecipes=>{
+        console.log(foundRecipes[0].name)
+        foundRecipes.forEach(recipe=>{
+            console.log(`Here are the recipes: ${recipe.name}`)
+            res.render('food/main', {faveRecipes: foundRecipes})
+        })
+    })
 })
 
 router.get('/results', (req, res)=>{
