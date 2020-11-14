@@ -1,5 +1,13 @@
 <h2><%= recipeInfo.title %></h2>
 <img src="<%= recipeInfo.image %>" height="250px" width="350px">
+
+<form action="/food/<%= recipeInfo.id %>/favorites" method="post">
+    <input type="hidden" name="name" value="<%= recipeInfo.title %>">
+    <input type="hidden" name="image" value="<%= recipeInfo.image %>">
+    <input type="hidden" name="apiId" value="<%= recipeInfo.id %>">
+    <input type="submit" value="Add to Favorites">
+</form>
+
 <br>
 <ul>
     <% recipeInfo.extendedIngredients.forEach(ingredient=>{ %>

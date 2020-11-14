@@ -32,11 +32,11 @@ router.get('/results', (req, res)=>{
 
 // POST route to save recipes
 router.post('/:recipe_id/favorites', (req, res)=>{
-    let parameter = req.params.id
+ 
     db.faveRecipe.findOrCreate({
         where: {name: req.body.name,
         image: req.body.image,
-        apiId: parseInt(parameter)}
+        apiId: parseInt(req.body.apiId)}
     })
     .then(([faveRecipe, created])=>{
         db.user.findByPk(req.user.id)
@@ -44,6 +44,7 @@ router.post('/:recipe_id/favorites', (req, res)=>{
             foundUser.addFaveRecipe(faveRecipe)
             console.log(`${foundUser.name} has added ${faveRecipe.name} to their favorites`)
         })
+        res.redirect('/food')
     })
     .catch(err=>{
         console.log("ERROR:", err)
@@ -57,6 +58,7 @@ router.get('/:recipe_id', (req, res)=>{
     .then(response =>{
         // res.send(response.data)
         let recipeInfo = response.data
+        console.log(recipeInfo)
         res.render('food/show', {recipeInfo: recipeInfo})
     })
 })
