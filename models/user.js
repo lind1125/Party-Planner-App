@@ -13,6 +13,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      models.user.hasMany(models.faveRecipe)
+
     }
   };
   user.init({
@@ -51,15 +53,6 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'user',
   });
-  //asyncronous version
-  // user.addHook('beforeCreate', async (pendingUser, options)=>{
-  //   await bcrypt.hash(pendingUser.password, 10)
-  //   .then(hashedPassword=>{
-  //     console.log(`${pendingUser.password} became ------> ${hashedPassword}`)
-  //     // replace the original password with the hash
-  //     pendingUser.password = hashedPassword
-  //   })
-  // })
 
   //synchronous
   user.addHook('beforeCreate', (pendingUser, options)=>{
