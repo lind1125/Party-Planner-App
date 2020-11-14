@@ -13,8 +13,8 @@ router.get('/', isLoggedIn, (req, res)=>{
         console.log(foundRecipes[0].name)
         foundRecipes.forEach(recipe=>{
             console.log(`Here are the recipes: ${recipe.name}`)
-            res.render('food/main', {faveRecipes: foundRecipes})
         })
+        res.render('food/main', {faveRecipes: foundRecipes})
     })
 })
 

@@ -4,9 +4,9 @@ const faveRecipe = require('./models/faverecipe')
 
 
 db.faveRecipe.findOrCreate({
-    where: {name: 'Pepperoni Pizza Muffins',
-    image: 'https://spoonacular.com/recipeImages/655698-556x370.jpg',
-    apiId: 655698}
+    where: {name: 'Yogurt Mousse With Raspberry Sauce',
+    image: 'https://spoonacular.com/recipeImages/665553-556x370.jpg',
+    apiId: 665553}
 })
 .then(([faveRecipe, created])=>{
     db.user.findByPk(1)

@@ -2,12 +2,18 @@
 
 <h2>Your Favorites</h2>
 
+<ul>
+<% faveRecipes.forEach(recipe=>{ %>
+    <li>
+        <img src="<%= recipe.image %>" height=100px width=150px>
+        <%= recipe.name %> 
+    </li>
+<% }) %>
+</ul> 
+
 
 <h3>Search for Recipes</h3>
 
-<p>
-    <%= faveRecipes[0].name %> 
-</p>
 
 <form method="GET" action="/food/results">
     <label for="foodKeyword">Search for Recipes:</label>
