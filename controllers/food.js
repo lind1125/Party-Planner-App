@@ -39,7 +39,7 @@ router.post('/:recipe_id/favorites', (req, res)=>{
         apiId: parseInt(parameter)}
     })
     .then(([faveRecipe, created])=>{
-        db.user.findByPk(1)
+        db.user.findByPk(req.user.id)
         .then(foundUser=>{
             foundUser.addFaveRecipe(faveRecipe)
             console.log(`${foundUser.name} has added ${faveRecipe.name} to their favorites`)
