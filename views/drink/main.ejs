@@ -1,3 +1,17 @@
+<h1>Cocktails!</h1>
+
+<h2>Your Favorites</h2>
+
+<ul>
+<% faveRecipes.forEach(recipe=>{ %>
+    <li>
+        <img src="<%= recipe.image %>" height=100px width=150px>
+        <%= recipe.name %> 
+    </li>
+<% }) %>
+</ul> 
+
+
 <h3>Search for Drinks</h3>
 
 <form method="GET" action="/drink/results">
