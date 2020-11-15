@@ -1,11 +1,19 @@
-<h1><%= results.strDrink %></h1>
-<img src="<%= results.strDrinkThumb %>" height=250px width=250px>
+<h1><%= drinkInfo.strDrink %></h1>
+<img src="<%= drinkInfo.strDrinkThumb %>" height=250px width=250px>
+
+<form action="/drink/<%= drinInfo.id %>/favorites" method="post">
+    <input type="hidden" name="name" value="<%= drinkInfo.strDrink %>">
+    <input type="hidden" name="image" value="<%= drinkInfo.strDrinkThumb %>">
+    <input type="hidden" name="apiId" value="<%= drinkInfo.idDrink %>">
+    <input type="submit" value="Add to Favorites">
+</form>
+
 <div id="cocktail-recipe">
 <ul>
-<% for (key in results) { %>
+<% for (key in drinkInfo) { %>
     <% let measureUnit %> 
-    <% if (key.includes('strMeasure') && results[key] !== null) { %>
-        <% measureUnit = results[key] %>
+    <% if (key.includes('strMeasure') && drinkInfo[key] !== null) { %>
+        <% measureUnit = drinkInfo[key] %>
         <% } else { %>
             <% continue %>
         <% } %>    
@@ -15,10 +23,10 @@
     <% } %> 
 </ul>
 <ul id="cocktail-ingredients">
-<% for (key in results) { %> 
+<% for (key in drinkInfo) { %> 
     <% let ingredient %> 
-    <% if (key.includes('strIngredient') && results[key] !== null) { %>
-        <%  ingredient = results[key] %>
+    <% if (key.includes('strIngredient') && drinkInfo[key] !== null) { %>
+        <%  ingredient = drinkInfo[key] %>
     <% } else { %>
         <% continue %>
     <% } %>    
@@ -30,5 +38,5 @@
 </div>
 <h4>Instructions:</h4>
 <p>
-    <%= results.strInstructions %> 
+    <%= drinkInfo.strInstructions %> 
 </p>
