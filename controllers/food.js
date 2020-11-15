@@ -34,9 +34,11 @@ router.get('/results', (req, res)=>{
 // POST route to save recipes
 router.post('/:recipe_id/favorites', (req, res)=>{ 
     db.faveRecipe.findOrCreate({
-        where: {name: req.body.name,
-        image: req.body.image,
-        apiId: parseInt(req.body.apiId)}
+        where: {
+            name: req.body.name,
+            image: req.body.image,
+            apiId: parseInt(req.body.apiId)
+        }
     })
     .then(([faveRecipe, created])=>{
         db.user.findByPk(req.user.id)

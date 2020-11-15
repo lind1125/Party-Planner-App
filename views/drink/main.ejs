@@ -2,7 +2,14 @@
 
 <h2>Your Favorites</h2>
 
-
+<ul>
+    <% faveDrinks.forEach(drink=>{ %>
+        <li>
+            <img src="<%= drink.image %>" height=100px width=150px>
+            <%= drink.name %> 
+        </li>
+    <% }) %>
+    </ul> 
 
 
 <h3>Search for Drinks</h3>
