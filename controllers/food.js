@@ -18,6 +18,7 @@ router.get('/', isLoggedIn, (req, res)=>{
         res.render('food/main', {faveRecipes: foundRecipes})
     })
 })
+
 //GET route to display search query results
 router.get('/results', (req, res)=>{
     axios.get(`https://api.spoonacular.com/recipes/complexSearch?query=${req.query.keyword}&apiKey=${process.env.FOOD_KEY}`)
@@ -31,8 +32,7 @@ router.get('/results', (req, res)=>{
 })
 
 // POST route to save recipes
-router.post('/:recipe_id/favorites', (req, res)=>{
- 
+router.post('/:recipe_id/favorites', (req, res)=>{ 
     db.faveRecipe.findOrCreate({
         where: {name: req.body.name,
         image: req.body.image,

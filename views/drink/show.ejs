@@ -1,7 +1,7 @@
 <h1><%= drinkInfo.strDrink %></h1>
 <img src="<%= drinkInfo.strDrinkThumb %>" height=250px width=250px>
 
-<form action="/drink/<%= drinInfo.id %>/favorites" method="post">
+<form action="/drink/<%= drinkInfo.idDrink %>/favorites" method="post">
     <input type="hidden" name="name" value="<%= drinkInfo.strDrink %>">
     <input type="hidden" name="image" value="<%= drinkInfo.strDrinkThumb %>">
     <input type="hidden" name="apiId" value="<%= drinkInfo.idDrink %>">
