@@ -16,5 +16,5 @@ const faveRecipe = require('./models/faverecipe')
 db.party.findOne({
     include: [db.faveDrink]
 }).then(party=>{
-    console.log(party.faveDrink.name)
+    console.log(party.faveDrink)
 })

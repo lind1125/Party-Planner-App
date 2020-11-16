@@ -1,5 +1,6 @@
 require('dotenv').config()
 const express = require('express')
+let db = require('./models')
 const app = express()
 const ejsLayouts = require('express-ejs-layouts')
 const session = require('express-session')
@@ -50,8 +51,12 @@ app.use('/food', require('./controllers/food.js'))
 app.use('/drink', require('./controllers/drink.js'))
 app.use('/guests', require('./controllers/guest.js'))
 
-app.get('/', (req, res)=>{
-    res.render('home.ejs')
+app.get('/', isLoggedIn, (req, res)=>{
+    db.party.findOne({
+        include: [db.faveDrink]
+    }).then(party=>{
+        res.render('home.ejs', {party: party})
+    })
 })
 
 app.get('/profile', isLoggedIn, (req, res)=>{
