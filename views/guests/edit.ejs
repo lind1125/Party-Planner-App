@@ -1,0 +1,17 @@
+<h1>Update Guest Info</h1>
+
+<form>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" value="<%= foundGuest.name %>">
+    <br>
+    <label for="likes">Likes:</label>
+    <input type="text" name="likes" id="likes" value="<%= foundGuest.likes %>">
+    <br>
+    <label for="dislikes">Dislikes:</label>
+    <input type="text" name="dislikes" id="dislikes" value="<%= foundGuest.dislikes %>">
+    <br>
+    <label for="allergies">Allergies/Sensitivities:</label>
+    <input type="text" name="allergies" id="allergies" value="<%= foundGuest.allergies %>">
+    <br>
+    <input type="submit" value="Update">
+</form>

@@ -39,4 +39,16 @@ router.get('/new', (req, res)=>{
     res.render('guests/new')
 })
 
+// edit route
+router.get('/edit/:guest_id', isLoggedIn, (req, res)=>{
+     db.guest.findOne({
+         where: {
+             id: req.params.guest_id 
+        }
+     })
+     .then(foundGuest=>{
+         res.render('guests/edit', {foundGuest: foundGuest})
+     })
+})
+// delete route
 module.exports = router

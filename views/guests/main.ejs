@@ -8,9 +8,12 @@
             <p>Dislikes: <%= guest.dislikes %></p>
             <p>Allergies/Sensitivities: <%= guest.allergies %></p>
         </div>
+        <a href="/guests/edit/<%= guest.id %>">
+        <input type="button" value="Edit">
+        </a>
     <% }) %>
 
-
+<br>
 <a href="/guests/new">
 <input type="button" value="Create New">
 </a>
