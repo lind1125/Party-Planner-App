@@ -1,5 +1,16 @@
 <h1>Guests</h1>
 
+
+    <% guests.forEach(guest=>{ %>
+        <div class=guest-container>
+            <p><%= guest.name %></p>
+            <p>Likes: <%= guest.likes %></p>
+            <p>Dislikes: <%= guest.dislikes %></p>
+            <p>Allergies/Sensitivities: <%= guest.allergies %></p>
+        </div>
+    <% }) %>
+
+
 <a href="/guests/new">
 <input type="button" value="Create New">
 </a>

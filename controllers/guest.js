@@ -6,7 +6,12 @@ const isLoggedIn = require('../middleware/isLoggedIn')
 
 // guest index route
 router.get('/', isLoggedIn, (req, res)=>{
-    res.render('guests/main')
+    db.guest.findAll({
+        where: {userId: req.user.id}
+    })
+    .then(foundGuests=>{
+        res.render('guests/main', {guests: foundGuests})
+    })
 })
 
 // POST /guest create a new guest

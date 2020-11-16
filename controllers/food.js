@@ -6,15 +6,10 @@ const isLoggedIn = require('../middleware/isLoggedIn')
 
 //GET route to display faved recipes and search form
 router.get('/', isLoggedIn, (req, res)=>{
-    console.log(req.user.id)
     db.faveRecipe.findAll({
         where: {userId: req.user.id}
     })
     .then(foundRecipes=>{
-        console.log(foundRecipes[0].name)
-        foundRecipes.forEach(recipe=>{
-            console.log(`Here are the recipes: ${recipe.name}`)
-        })
         res.render('food/main', {faveRecipes: foundRecipes})
     })
 })
