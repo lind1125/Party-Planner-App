@@ -74,4 +74,18 @@ router.put('/:guest_id', isLoggedIn, (req, res)=>{
 
 
 // delete route
+router.delete('/:guest_id', isLoggedIn, (req, res)=>{
+    db.guest.destroy({
+        where: {                
+            id: req.params.guest_id 
+        }
+    }).then(numRowsDeleted=>{
+        console.log(numRowsDeleted)
+        res.redirect('/guests')
+    })
+    .catch(err=>{
+        console.log('ERROR:', err)
+    }) 
+})
+
 module.exports = router

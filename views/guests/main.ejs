@@ -11,6 +11,9 @@
         <a href="/guests/edit/<%= guest.id %>">
         <input type="button" value="Edit">
         </a>
+        <form method="POST" action="/guests/<%= guest.id %>/?_method=DELETE">
+            <input type="submit" value="Delete">
+        </form>
     <% }) %>
 
 <br>
