@@ -6,7 +6,9 @@
     <% faveDrinks.forEach(drink=>{ %>
         <li>
             <img src="<%= drink.image %>" height=100px width=150px>
+            <a href="/drink/<%= drink.apiId %>">
             <%= drink.name %> 
+            </a>
         </li>
     <% }) %>
     </ul> 

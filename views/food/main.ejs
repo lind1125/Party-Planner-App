@@ -6,7 +6,9 @@
 <% faveRecipes.forEach(recipe=>{ %>
     <li>
         <img src="<%= recipe.image %>" height=100px width=150px>
+        <a href="/food/<%= recipe.apiId %>">
         <%= recipe.name %> 
+        </a>
     </li>
 <% }) %>
 </ul> 

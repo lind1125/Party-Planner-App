@@ -67,7 +67,4 @@ router.get('/:drink_id', (req, res)=>{
 })
 
 
-//GET route to display saved cocktails
-
-
 module.exports = router
