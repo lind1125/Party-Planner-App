@@ -39,7 +39,7 @@ router.get('/new', (req, res)=>{
     res.render('guests/new')
 })
 
-// edit route
+// GET edit route - display form to edit guest info
 router.get('/edit/:guest_id', isLoggedIn, (req, res)=>{
      db.guest.findOne({
          where: {
@@ -50,5 +50,28 @@ router.get('/edit/:guest_id', isLoggedIn, (req, res)=>{
          res.render('guests/edit', {foundGuest: foundGuest})
      })
 })
+
+//PUT route - update guest info
+router.put('/:guest_id', isLoggedIn, (req, res)=>{
+    db.guest.update({
+            name: req.body.name,
+            likes: req.body.likes,
+            dislikes: req.body.dislikes,
+            allergies: req.body.allergies
+        }, {
+            where: {
+                id: req.params.guest_id 
+            }
+        })
+        .then(numRowsChanged=>{
+            console.log(numRowsChanged)
+            res.redirect('/guests')
+        })
+        .catch(err=>{
+            console.log('ERROR:', err)
+        })       
+    })
+
+
 // delete route
 module.exports = router

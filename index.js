@@ -6,6 +6,10 @@ const session = require('express-session')
 const passport = require('./config/ppConfig.js')
 const flash = require('connect-flash')
 const isLoggedIn = require('./middleware/isLoggedIn')
+const methodOverride = require('method-override')
+
+//method override middleware for PUT and DELETE routes
+app.use(methodOverride('_method'))
 
 // setup ejs and ejs layouts
 app.set('view engine', 'ejs')
