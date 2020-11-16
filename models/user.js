@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.user.hasMany(models.faveRecipe)
       models.user.hasMany(models.faveDrink)
+      models.user.hasMany(models.guest)
 
     }
   };

@@ -50,6 +50,9 @@ router.post('/:drink_id/favorites', (req, res)=>{
         })
         res.redirect('/drink')
     })
+    .catch(err =>{
+        console.log('ERROR:', err)
+    })
 })
 
 
