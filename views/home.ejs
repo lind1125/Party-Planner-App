@@ -2,10 +2,15 @@
 
 <div id="party-drinks">
     <ul>
-        <% party.forEach(partyItem=>{ %> 
-        <li>
+        <% party.forEach(partyItem=>{ %>
+            <li>
+            <% if (partyItem.faveDrinkId){ %>  
             <p> <%= partyItem.faveDrink.name %></p>
             <img src="<%= partyItem.faveDrink.image %>" height="100" width="100">
+            <% } else { %>
+                <p> <%= partyItem.faveRecipe.name %></p>
+                <img src="<%= partyItem.faveRecipe.image %>" height="100" width="100">   
+            <% } %> 
         </li>
         <% }) %> 
     </ul>
