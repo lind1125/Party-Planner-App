@@ -64,6 +64,19 @@ app.get('/profile', isLoggedIn, (req, res)=>{
     res.render('profile.ejs')
 })
 
+app.delete('/:id', isLoggedIn, (req, res)=>{
+    db.party.destroy({
+        where: {                
+            id: req.params.id 
+        }
+    }).then(numRowsDeleted=>{
+        console.log(numRowsDeleted)
+        res.redirect('/')
+    })
+    .catch(err=>{
+        console.log('ERROR:', err)
+    }) 
+})
 
 app.listen(process.env.PORT, ()=>{
     console.log('BOO! It\'s port 8000')
