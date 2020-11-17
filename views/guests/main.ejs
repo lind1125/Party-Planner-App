@@ -12,13 +12,13 @@
                 <input type="hidden" name="name" value="<%= guest.name %>">
                 <input type="submit" value="Add To Party Plan">
             </form>
+            <a href="/guests/edit/<%= guest.id %>">
+            <input type="button" value="Edit">
+            </a>
+            <form method="POST" action="/guests/<%= guest.id %>/?_method=DELETE">
+                <input type="submit" value="Delete">
+            </form>
         </div>
-        <a href="/guests/edit/<%= guest.id %>">
-        <input type="button" value="Edit">
-        </a>
-        <form method="POST" action="/guests/<%= guest.id %>/?_method=DELETE">
-            <input type="submit" value="Delete">
-        </form>
     <% }) %>
 
 <br>
