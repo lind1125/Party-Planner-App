@@ -9,6 +9,11 @@
             <a href="/drink/<%= drink.apiId %>">
             <%= drink.name %> 
             </a>
+            <form method="POST" action="/drink/add">
+                <input type="hidden" name="id" value="<%= drink.id %>">
+                <input type="hidden" name="name" value="<%= drink.name %>">
+                <input type="submit" value="Add To Party Plan">
+            </form>
         </li>
     <% }) %>
     </ul> 

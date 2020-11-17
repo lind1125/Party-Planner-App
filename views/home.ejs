@@ -1,4 +1,12 @@
 <h2>Current Party Plan:</h2>
 
-<p> <%= party.faveDrink.name %></p>
-<img src="<%= party.faveDrink.image %>" alt="">
+<div id="party-drinks">
+    <ul>
+        <% party.forEach(partyItem=>{ %> 
+        <li>
+            <p> <%= partyItem.faveDrink.name %></p>
+            <img src="<%= partyItem.faveDrink.image %>" height="100" width="100">
+        </li>
+        <% }) %> 
+    </ul>
+</div>

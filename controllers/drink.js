@@ -69,5 +69,18 @@ router.get('/:drink_id', (req, res)=>{
     })
 })
 
+//POST route to add to party plan
+router.post('/add', (req, res)=>{
+    // console.log(req.body.id)
+    db.party.findOrCreate({
+    where: {faveDrinkId: req.body.id}
+})
+.then(([party, created])=>{
+        console.log(`${req.body.name} added to party plan`)
+})
+.catch(err=>{
+    console.log("ERROR:", err)
+})
+})
 
 module.exports = router

@@ -51,8 +51,9 @@ app.use('/food', require('./controllers/food.js'))
 app.use('/drink', require('./controllers/drink.js'))
 app.use('/guests', require('./controllers/guest.js'))
 
+// route for main page, displays faved items and guests for party plan
 app.get('/', isLoggedIn, (req, res)=>{
-    db.party.findOne({
+    db.party.findAll({
         include: [db.faveDrink]
     }).then(party=>{
         res.render('home.ejs', {party: party})
