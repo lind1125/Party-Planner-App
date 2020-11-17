@@ -1,9 +1,9 @@
 <h2>Current Party Plan:</h2>
-
-<div id="party-guests">
-    <h4>GUESTS!</h4>
-<% party.forEach(partyItem=>{ %>
-    <% if (partyItem.guestId){ %>  
+<div class="containter">
+    <div id="party-guests">
+        <h4>GUESTS!</h4>
+        <% party.forEach(partyItem=>{ %>
+            <% if (partyItem.guestId){ %>  
             <ul>
                 <li>
                     <p> <%= partyItem.guest.name %></p>
@@ -12,13 +12,13 @@
                     </form>
                 </li>
             </ul>
-        </div>
-        <% } %>
-<% }) %> 
-<div id="party-drinks">
-    <h4>DRINKS!</h4>
-<% party.forEach(partyItem=>{ %>
-    <% if (partyItem.faveDrinkId){ %>  
+            <% } %>
+        <% }) %> 
+    </div>
+    <div id="party-drinks">
+        <h4>DRINKS!</h4>
+        <% party.forEach(partyItem=>{ %>
+            <% if (partyItem.faveDrinkId){ %>  
             <ul>
                 <li>
                     <p> <%= partyItem.faveDrink.name %></p>
@@ -28,13 +28,13 @@
                     </form>
                 </li>
             </ul>
-        </div>
-        <% } %>
-<% }) %> 
-        <div id="party-recipes">
-            <h4>FOOD!</h4>
-            <% party.forEach(partyItem=>{ %>
-                <% if (partyItem.faveRecipeId){ %>  
+            <% } %>
+        <% }) %> 
+    </div>
+    <div id="party-recipes">
+        <h4>FOOD!</h4>
+        <% party.forEach(partyItem=>{ %>
+            <% if (partyItem.faveRecipeId){ %>  
             <ul>
                 <li>              
                     <p> <%= partyItem.faveRecipe.name %></p>
@@ -44,6 +44,7 @@
                     </form>  
                 </li>
             </ul>
-        </div>
-        <% } %>
-<% }) %> 
+            <% } %>
+        <% }) %> 
+    </div>
+</div>
