@@ -90,13 +90,19 @@ router.delete('/:guest_id', isLoggedIn, (req, res)=>{
 
 
 //POST route to add to party plan
-router.post('/add', (req, res)=>{
+router.post('/add', isLoggedIn, (req, res)=>{
     // console.log(req.body.id)
     db.party.findOrCreate({
-    where: {guestId: req.body.id}
+        where: {
+            guestId: req.body.id
+        },
+        defaults: {
+            userId: req.user.id
+        }
     })
     .then(([party, created])=>{
         console.log(`${req.body.name} added to party plan`)
+        res.redirect('/')
     })
     .catch(err=>{
         console.log("ERROR:", err)

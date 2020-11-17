@@ -14,12 +14,14 @@ module.exports = (sequelize, DataTypes) => {
       models.party.belongsTo(models.faveDrink)
       models.party.belongsTo(models.faveRecipe)
       models.party.belongsTo(models.guest)
+      models.party.belongsTo(models.user)
     }
   };
   party.init({
     guestId: DataTypes.INTEGER,
     faveRecipeId: DataTypes.INTEGER,
-    faveDrinkId: DataTypes.INTEGER
+    faveDrinkId: DataTypes.INTEGER,
+    userId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'party',

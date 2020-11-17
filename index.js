@@ -54,6 +54,7 @@ app.use('/guests', require('./controllers/guest.js'))
 // route for main page, displays faved items and guests for party plan
 app.get('/', isLoggedIn, (req, res)=>{
     db.party.findAll({
+        where: {userId: req.user.id},
         include: [db.faveDrink, db.faveRecipe, db.guest]
     }).then(party=>{
         res.render('home.ejs', {party: party})

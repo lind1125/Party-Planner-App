@@ -73,9 +73,13 @@ router.get('/:drink_id', (req, res)=>{
 router.post('/add', (req, res)=>{
     // console.log(req.body.id)
     db.party.findOrCreate({
-    where: {faveDrinkId: req.body.id}
+    where: {faveDrinkId: req.body.id},
+    defaults: {
+        userId: req.user.id
+    }
     })
     .then(([party, created])=>{
+        res.redirect('/')
         console.log(`${req.body.name} added to party plan`)
     })
     .catch(err=>{

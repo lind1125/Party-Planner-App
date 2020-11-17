@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       models.user.hasMany(models.faveRecipe)
       models.user.hasMany(models.faveDrink)
       models.user.hasMany(models.guest)
-
+      models.user.hasMany(models.party)
     }
   };
   user.init({

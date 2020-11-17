@@ -17,6 +17,9 @@ module.exports = {
       faveDrinkId: {
         type: Sequelize.INTEGER
       },
+      userId: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
