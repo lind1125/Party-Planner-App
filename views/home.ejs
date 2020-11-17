@@ -1,17 +1,28 @@
 <h2>Current Party Plan:</h2>
 
 <div id="party-drinks">
-    <ul>
-        <% party.forEach(partyItem=>{ %>
-            <li>
-            <% if (partyItem.faveDrinkId){ %>  
-            <p> <%= partyItem.faveDrink.name %></p>
-            <img src="<%= partyItem.faveDrink.image %>" height="100" width="100">
-            <% } else { %>
-                <p> <%= partyItem.faveRecipe.name %></p>
-                <img src="<%= partyItem.faveRecipe.image %>" height="100" width="100">   
-            <% } %> 
-        </li>
-        <% }) %> 
-    </ul>
-</div>
+    <h4>DRINKS!</h4>
+<% party.forEach(partyItem=>{ %>
+    <% if (partyItem.faveDrinkId){ %>  
+            <ul>
+                <li>
+                    <p> <%= partyItem.faveDrink.name %></p>
+                    <img src="<%= partyItem.faveDrink.image %>" height="100" width="100">
+                </li>
+            </ul>
+        </div>
+        <% } %>
+<% }) %> 
+        <div id="party-recipes">
+            <h4>FOOD!</h4>
+            <% party.forEach(partyItem=>{ %>
+                <% if (partyItem.faveRecipeId){ %>  
+            <ul>
+                <li>              
+                    <p> <%= partyItem.faveRecipe.name %></p>
+                    <img src="<%= partyItem.faveRecipe.image %>" height="100" width="100">   
+                </li>
+            </ul>
+        </div>
+        <% } %>
+<% }) %> 
