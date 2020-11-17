@@ -12,6 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       // define association here
       models.guest.belongsTo(models.user)
+      models.guest.hasMany(models.party)
+
 
     }
   };

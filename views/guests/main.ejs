@@ -7,6 +7,11 @@
             <p>Likes: <%= guest.likes %></p>
             <p>Dislikes: <%= guest.dislikes %></p>
             <p>Allergies/Sensitivities: <%= guest.allergies %></p>
+            <form method="POST" action="/guests/add">
+                <input type="hidden" name="id" value="<%= guest.id %>">
+                <input type="hidden" name="name" value="<%= guest.name %>">
+                <input type="submit" value="Add To Party Plan">
+            </form>
         </div>
         <a href="/guests/edit/<%= guest.id %>">
         <input type="button" value="Edit">

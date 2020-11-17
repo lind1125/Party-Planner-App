@@ -1,5 +1,17 @@
 <h2>Current Party Plan:</h2>
 
+<div id="party-guests">
+    <h4>GUESTS!</h4>
+<% party.forEach(partyItem=>{ %>
+    <% if (partyItem.guestId){ %>  
+            <ul>
+                <li>
+                    <p> <%= partyItem.guest.name %></p>
+                </li>
+            </ul>
+        </div>
+        <% } %>
+<% }) %> 
 <div id="party-drinks">
     <h4>DRINKS!</h4>
 <% party.forEach(partyItem=>{ %>

@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       models.party.belongsTo(models.faveDrink)
       models.party.belongsTo(models.faveRecipe)
+      models.party.belongsTo(models.guest)
     }
   };
   party.init({
