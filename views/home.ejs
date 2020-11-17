@@ -6,7 +6,15 @@
             <% if (partyItem.guestId){ %>  
             <ul>
                 <li>
-                    <p> <%= partyItem.guest.name %></p>
+                    <span> <%= partyItem.guest.name %></span>
+                    <div class="dropdown">
+                        &#43;
+                        <div class="dropdown-content">
+                            <p>Likes: <%= partyItem.guest.likes %></p>
+                            <p>Dislikes: <%= partyItem.guest.dislikes %></p>
+                            <p>Allergies/Sensitivities: <%= partyItem.guest.allergies %></p>
+                        </div>
+                    </div>
                     <form method="POST" action="/<%= partyItem.id %>/?_method=DELETE">
                         <input type="submit" value="Remove from Party Plan">
                     </form>
