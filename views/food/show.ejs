@@ -9,13 +9,15 @@
 </form>
 
 <br>
-<ul>
+<div class="ingredients-container">
+<ul class="default-list">
     <% recipeInfo.extendedIngredients.forEach(ingredient=>{ %>
         <li>
             <%= ingredient.amount %> <%= ingredient.unit %> <%= ingredient.name %> 
         </li>
     <% }) %> 
 </ul>
+</div>
 <h4>Instructions:</h4>
 <ol>
         <% recipeInfo.analyzedInstructions[0].steps.forEach(step=>{ %>

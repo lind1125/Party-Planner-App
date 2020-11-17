@@ -2,7 +2,13 @@ body {
     text-align: center;
     vertical-align: middle;
 }
+ul {
+    list-style-type: none;
+}
 
+.default-list {
+    list-style-type: disc;
+}
 
 nav{
     display: flex;
@@ -47,15 +53,16 @@ nav ul {
 
 .meal-items {
     display: flex;
-    justify-content: center
+    justify-content: space-around;
 }
 
-#cocktail-recipe {
+.ingredients-container {
     display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 #cocktail-ingredients {
-    list-style-type: none;
     padding-left: 5px;
 }
 

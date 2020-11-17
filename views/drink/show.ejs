@@ -8,8 +8,8 @@
     <input type="submit" value="Save this Cocktail">
 </form>
 
-<div id="cocktail-recipe">
-<ul>
+<div class="ingredients-container">
+<ul class="default-list">
 <% for (key in drinkInfo) { %>
     <% let measureUnit %> 
     <% if (key.includes('strMeasure') && drinkInfo[key] !== null) { %>
