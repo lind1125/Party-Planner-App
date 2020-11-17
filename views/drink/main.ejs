@@ -1,13 +1,13 @@
 <h1>Cocktails!</h1>
 
-<h2>Your Favorites</h2>
+<h2>Your Saved Cocktails</h2>
 
 <ul>
     <% faveDrinks.forEach(drink=>{ %>
         <li>
             <img src="<%= drink.image %>" height=100px width=150px>
             <a href="/drink/<%= drink.apiId %>">
-            <%= drink.name %> 
+           <p> <%= drink.name %> </p> 
             </a>
             <form method="POST" action="/drink/add">
                 <input type="hidden" name="id" value="<%= drink.id %>">

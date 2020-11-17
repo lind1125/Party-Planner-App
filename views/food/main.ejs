@@ -1,13 +1,13 @@
 <h1>Meal Ideas</h1>
 
-<h2>Your Favorites</h2>
+<h2>Your Saved Recipes</h2>
 
 <ul>
 <% faveRecipes.forEach(recipe=>{ %>
     <li>
         <img src="<%= recipe.image %>" height=100px width=150px>
         <a href="/food/<%= recipe.apiId %>">
-        <%= recipe.name %> 
+        <p><%= recipe.name %></p> 
         </a>
         <form method="POST" action="/food/add">
             <input type="hidden" name="id" value="<%= recipe.id %>">

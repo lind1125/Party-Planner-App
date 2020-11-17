@@ -9,13 +9,15 @@ nav{
     justify-content: space-around;
 }
 
+
 nav ul {
-    display: flex;
-    justify-content: space-between;
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: space-between;
     width: 15%;
 }
+
 
 #party-guests {
     grid-area: left-half;
@@ -42,9 +44,10 @@ nav ul {
         "left-half right-half-bottom"
 }
 
-#party-plan ul {
-    list-style-type: none;
-    padding: 0;
+
+.meal-items {
+    display: flex;
+    justify-content: center
 }
 
 #cocktail-recipe {

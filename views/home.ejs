@@ -2,9 +2,9 @@
 <div class="container" id="party-plan">
     <div id="party-guests">
         <h4>GUESTS!</h4>
+        <ul>
         <% party.forEach(partyItem=>{ %>
             <% if (partyItem.guestId){ %>  
-            <ul>
                 <li>
                     <span> <%= partyItem.guest.name %></span>
                     <div class="dropdown">
@@ -19,31 +19,15 @@
                         <input type="submit" value="Remove from Party Plan">
                     </form>
                 </li>
-            </ul>
             <% } %>
         <% }) %> 
-    </div>
-    <div id="party-drinks">
-        <h4>DRINKS!</h4>
-        <% party.forEach(partyItem=>{ %>
-            <% if (partyItem.faveDrinkId){ %>  
-            <ul>
-                <li>
-                    <p> <%= partyItem.faveDrink.name %></p>
-                    <img src="<%= partyItem.faveDrink.image %>" height="100" width="100">
-                    <form method="POST" action="/<%= partyItem.id %>/?_method=DELETE">
-                        <input type="submit" value="Remove from Party Plan">
-                    </form>
-                </li>
-            </ul>
-            <% } %>
-        <% }) %> 
+        </ul>
     </div>
     <div id="party-recipes">
         <h4>FOOD!</h4>
+        <ul class="meal-items">
         <% party.forEach(partyItem=>{ %>
             <% if (partyItem.faveRecipeId){ %>  
-            <ul>
                 <li>              
                     <p> <%= partyItem.faveRecipe.name %></p>
                     <img src="<%= partyItem.faveRecipe.image %>" height="100" width="100"> 
@@ -51,8 +35,24 @@
                         <input type="submit" value="Remove from Party Plan">
                     </form>  
                 </li>
-            </ul>
             <% } %>
         <% }) %> 
+        </ul>
+    </div>
+    <div id="party-drinks">
+        <h4>DRINKS!</h4>
+        <ul class="meal-items">
+        <% party.forEach(partyItem=>{ %>
+            <% if (partyItem.faveDrinkId){ %>  
+                <li>
+                    <p> <%= partyItem.faveDrink.name %></p>
+                    <img src="<%= partyItem.faveDrink.image %>" height="100" width="100">
+                    <form method="POST" action="/<%= partyItem.id %>/?_method=DELETE">
+                        <input type="submit" value="Remove from Party Plan">
+                    </form>
+                </li>
+            <% } %>
+        <% }) %> 
+        </ul>
     </div>
 </div>
