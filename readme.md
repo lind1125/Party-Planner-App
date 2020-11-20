@@ -82,19 +82,19 @@ sequelize db:migrate
 ---
 
 ### Wireframes
-![mainpage](./Wireframe/1.png)
+![mainpage](./wireframe/1.png)
 
 ---
-![guestpage](./Wireframe/2.png)
+![guestpage](./wireframe/2.png)
 
 ---
-![mealpage](./Wireframe/3.png)
+![mealpage](./wireframe/3.png)
 
 ---
-![cocktailpage](./Wireframe/4.png)
+![cocktailpage](./wireframe/4.png)
 
 ---
-![searchresultspage](./Wireframe/5.png)
+![searchresultspage](./wireframe/5.png)
 
 ---
 ### User Stories
