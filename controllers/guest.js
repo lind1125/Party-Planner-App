@@ -73,7 +73,7 @@ router.put('/:guest_id', isLoggedIn, (req, res)=>{
     })
 
 
-// delete route
+// delete route to remove guest
 router.delete('/:guest_id', isLoggedIn, (req, res)=>{
     db.guest.destroy({
         where: {                

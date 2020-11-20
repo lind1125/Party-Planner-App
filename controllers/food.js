@@ -59,6 +59,7 @@ router.get('/:recipe_id', (req, res)=>{
         res.render('food/show', {recipeInfo: recipeInfo})
     })
 })
+
 //POST route to add to party plan
 router.post('/add', (req, res)=>{
     // console.log(req.body.id)

@@ -51,7 +51,7 @@ app.use('/food', require('./controllers/food.js'))
 app.use('/drink', require('./controllers/drink.js'))
 app.use('/guests', require('./controllers/guest.js'))
 
-// route for main page, displays faved items and guests for party plan
+// GET route for main page, displays faved items and guests for party plan
 app.get('/', isLoggedIn, (req, res)=>{
     db.party.findAll({
         where: {userId: req.user.id},
@@ -61,10 +61,7 @@ app.get('/', isLoggedIn, (req, res)=>{
     })
 })
 
-app.get('/profile', isLoggedIn, (req, res)=>{
-    res.render('profile.ejs')
-})
-
+//DELETE route to remove items from party plan
 app.delete('/:id', isLoggedIn, (req, res)=>{
     db.party.destroy({
         where: {                

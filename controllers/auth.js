@@ -3,10 +3,11 @@ const router = express.Router()
 const db = require('../models')
 const passport = require('../config/ppConfig.js')
 
+//GET route to display signup form
 router.get('/signup', (req, res)=>{
     res.render('auth/signup')
 })
-
+//POST route to add new user
 router.post('/signup', (req, res)=>{
     console.log('sign up form user input:', req.body)
     db.user.findOrCreate({     // check if the user already exists
@@ -37,11 +38,12 @@ router.post('/signup', (req, res)=>{
     })
 })
 
-
+//GET route to display login form
 router.get('/login', (req, res)=>{
     res.render('auth/login')
 })
 
+// POST route for User login
 router.post('/login', passport.authenticate('local', {
     failureRedirect: '/auth/login',
     successRedirect: '/',
@@ -49,6 +51,7 @@ router.post('/login', passport.authenticate('local', {
     successFlash: 'You are now logged in!' // !-> FLASH <-!
 }))
 
+// User logout
 router.get('/logout', (req, res)=>{
     req.logout()
     req.flash('success', 'Successfully logged out!') // !-> FLASH <-!
