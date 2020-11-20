@@ -1,15 +1,20 @@
-# App Title: 
+# App Title: Party Planner App
 
-### App Demo: www.linkegoeshere.com
+### App Demo: https://dinner-party-planner-app.herokuapp.com/
 
 ---
 
 ## Concept:
 
-A full description of what your project is all about 
+The Party Planner is a full-stack app designed to create a database of food and cocktail recipes, as well as any people you might want to invite. Set your menu and guests with just a few clicks.
 
+---
 ## Technologies Used:
 
+* App Build
+  * Express
+  * EJS
+  * express-ejs-layouts
 * Auth
   * bcrypt
   * passport
@@ -18,6 +23,9 @@ A full description of what your project is all about
 * Database management
   * postgres
   * sequelize
+* APIs used
+  * [spoonacular api](https://spoonacular.com/food-api)
+  * [thecocktaildb api](https://www.thecocktaildb.com/api.php)
 
 
 
@@ -65,31 +73,49 @@ sequelize db:migrate
 7. Add `SESSION_SECRET` (any string), `PORT` (value of the host port), and `FOOD_KEY` (your Spoonacular API key) environment variables in a `.env` file.
 
 8. Run `nodemon` to start up app
-----------------------------------------------------------
+
+---
 ### ERD
 
-![ERD](asdfasdfsd)
-----------------------------------------------------------
+![ERD](DanLinden_Project2_ERD.png)
 
+---
+
+### Wireframes
+![mainpage](./Wireframe/1.png)
+
+---
+![guestpage](./Wireframe/2.png)
+
+---
+![mealpage](./Wireframe/3.png)
+
+---
+![cocktailpage](./Wireframe/4.png)
+
+---
+![searchresultspage](./Wireframe/5.png)
+
+---
 ### User Stories
 * As a user, I want to be able to search for food and cocktail recipes
 * As a user, I want to search for recipes and save them to a list in order to access them later
 * As a user, I want to add guests to a list and include likes, dislikes, and/or sensitivities/allergies
 * As a user I want to flag saved guests and recipes to be displayed together on one page, and then go to that page to see my party plan.
-----------------------------------------------------------
-### Wireframes
-![mainpage](./Wireframe/1.png)
+---
+ 
+ ### Development Plan
 
-------------------------------
-![guestpage](./Wireframe/2.png)
+- [x] Access spoonacular and cocktaildb APIs and save recipes to app database, accessible only by logged in user. Create user-accessible guest list.
+- [x] Add saved recipes/guests to a party plan, allowing the user to see all three elements on one page. 
+- [ ] Expand features and improve styling to optimize UX/UI
 
--------------------------------
-![mealpage](./Wireframe/3.png)
+### Stretch Goals
+* Improve styling
+* Modify code for accessibility
+* Implement full CRUD functionality for saved recipes and cocktails.
+* Allow for multiple instances of party plans that can be saved and displayed at will by the user.
+* Develop functionality to flag food or drink in the party plan that match up to a guest's allergies/sensitivities.
 
----------------------------------
-![cocktailpage](./Wireframe/4.png)
-
------------------------------------
-![searchresultspage](./Wireframe/5.png)
-
-----------------------------------------------------------
+---
+### App Demo: https://dinner-party-planner-app.herokuapp.com/
